@@ -9,34 +9,32 @@
 <body>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('https://ipinfo.io/json')
-        .then(response => response.json())
+    var url = 'http://188.116.25.130:5000/verify/344234234'; // Replace with the actual URL
+
+    var options = {
+        method: 'POST',
+        headers: {
+            // Add any headers as needed
+        }
+    };
+
+    fetch(url, options)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // Assuming the response is in JSON format
+        })
         .then(data => {
-            var url = 'http://188.116.25.130:5000/verify/344234234';
-            var formData = new FormData();
-            formData.append('ipAddress', ipAddress);
-
-            fetch(url, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded', // Adjust content type as needed
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+            console.log('Success:', data);
+            // Handle the successful response
         })
         .catch(error => {
-            console.error('Error fetching IP address:', error);
+            console.error('Error:', error);
+            // Handle errors
         });
 });
 </script>
-<h1>Almost done, hold on</h1>>
+<h1>Almost done, hold on</h1>
 </body>
 </html>
