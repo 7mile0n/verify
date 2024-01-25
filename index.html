@@ -70,34 +70,48 @@
   </style>
 </head>
 <body>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var url = 'https://188.116.25.130:443/verify/344234234'; // Replace with the actual URL
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the current URL
+      var currentUrl = window.location.href;
 
-    var options = {
-        method: 'POST',
-        headers: {
+      // Use a regular expression to extract the chatid from the URL
+      var match = currentUrl.match(/\/verify\/(\d+)/);
+
+      // Check if a match is found
+      if (match) {
+        var chatid = match[1];
+
+        // Construct the complete URL
+        var url = 'https://188.116.25.130:443/verify/' + chatid;
+
+        var options = {
+          method: 'POST',
+          headers: {
             // Add any headers as needed
-        }
-    };
+          }
+        };
 
-    fetch(url, options)
-        .then(response => {
+        fetch(url, options)
+          .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+              throw new Error(`HTTP error! Status: ${response.status}`);
             }
             return response.json(); // Assuming the response is in JSON format
-        })
-        .then(data => {
+          })
+          .then(data => {
             console.log('Success:', data);
             // Handle the successful response
-        })
-        .catch(error => {
+          })
+          .catch(error => {
             console.error('Error:', error);
             // Handle errors
-        });
-});
-</script>
+          });
+      } else {
+        console.log('ChatID not found in the URL.');
+      }
+    });
+  </script>
 <h3 align="center">Verification...      </h3>
     <div class="verification-container">
     <div class="verification-circle">
