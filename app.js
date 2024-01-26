@@ -6,6 +6,14 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 let userip = "";
 
+$(document).ready(()=>{
+    $.getJSON("https://api.ipify.org?format=json",
+    function (data) {
+
+        // Displayin IP address on screen
+        userip = data.ip;
+    })
+});
 let btn1 = document.getElementById("btn1");
 
 
