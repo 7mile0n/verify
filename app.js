@@ -6,7 +6,7 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 
 
-let info = console.log("User Agent: " + navigator.userAgent);
+let info = "137.123.123.123"
 let btn1 = document.getElementById("btn1");
 
 
