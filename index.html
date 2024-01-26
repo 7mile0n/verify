@@ -1,45 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verify User</title>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var url = 'http://localhost:3000/verify'; // Replace with the actual server URL
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+      body {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
+}
 
-      // Sample data to send with the POST request
-      var postData = {
-        username: 'exampleUser',
-        password: 'examplePassword'
-      };
+.container {
+	max-width: 390px;
+}
 
-      var options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(postData)
-      };
+.inner {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 200px 200px 200px;
+}
 
-      fetch(url, options)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then(data => {
-          // Display the received data
-          document.getElementById('result').innerHTML = JSON.stringify(data);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    });
-  </script>
+.img {
+	width: 150px;
+}
+
+.item {
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	background: rgb(248, 168, 24);
+	border-radius: 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+
+	transition: background .2s linear;
+}
+
+.btn:hover {
+	background: lightgreen;
+}
+
+.usercard {
+	text-align: center;
+}
+    </style>
+	<title>Document</title>
 </head>
 <body>
-  <div id="result"></div>
+	<script>let tg = window.Telegram.WebApp;
+
+tg.expand();
+
+tg.MainButton.textColor = '#FFFFFF';
+tg.MainButton.color = '#2cab37';
+
+let item = "";
+
+let btn1 = document.getElementById("btn1");
+let btn2 = document.getElementById("btn2");
+let btn3 = document.getElementById("btn3");
+let btn4 = document.getElementById("btn4");
+let btn5 = document.getElementById("btn5");
+let btn6 = document.getElementById("btn6");
+
+btn1.addEventListener("click", function(){
+	if (tg.MainButton.isVisible) {
+		tg.MainButton.hide();
+	}
+	else {
+		tg.MainButton.setText("Вы выбрали товар 1!");
+		item = "1";
+		tg.MainButton.show();
+	}
+});
+
+btn2.addEventListener("click", function(){
+	if (tg.MainButton.isVisible) {
+		tg.MainButton.hide();
+	}
+	else {
+		tg.MainButton.setText("Вы выбрали товар 2!");
+		item = "2";
+		tg.MainButton.show();
+	}
+});
+
+btn3.addEventListener("click", function(){
+	if (tg.MainButton.isVisible) {
+		tg.MainButton.hide();
+	}
+	else {
+		tg.MainButton.setText("Вы выбрали товар 3!");
+		item = "3";
+		tg.MainButton.show();
+	}
+});
+
+btn4.addEventListener("click", function(){
+	if (tg.MainButton.isVisible) {
+		tg.MainButton.hide();
+	}
+	else {
+		tg.MainButton.setText("Вы выбрали товар 4!");
+		item = "4";
+		tg.MainButton.show();
+	}
+});
+
+btn5.addEventListener("click", function(){
+	if (tg.MainButton.isVisible) {
+		tg.MainButton.hide();
+	}
+	else {
+		tg.MainButton.setText("Вы выбрали товар 5!");
+		item = "5";
+		tg.MainButton.show();
+	}
+});
+
+btn6.addEventListener("click", function(){
+	if (tg.MainButton.isVisible) {
+		tg.MainButton.hide();
+	}
+	else {
+		tg.MainButton.setText("Вы выбрали товар 6!");
+		item = "6";
+		tg.MainButton.show();
+	}
+});
+
+
+Telegram.WebApp.onEvent("mainButtonClicked", function(){
+	tg.sendData(item);
+});
+
+
+let usercard = document.getElementById("usercard");
+
+let p = document.createElement("p");
+
+p.innerText = `${tg.initDataUnsafe.user.first_name}
+${tg.initDataUnsafe.user.last_name}`;
+
+usercard.appendChild(p);
+    </script>
+	<div class="usercard" id="usercard">
+
+	</div>
+
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="app.js"></script>
 </body>
 </html>
