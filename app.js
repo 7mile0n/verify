@@ -4,9 +4,10 @@ tg.expand();
 
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
-let userip = fetch('https://api.ipify.org/?format=json')
+let userip = ""; 
+fetch('https://api.ipify.org/?format=json')
   .then(response => response.json())
-  .then(data => console.log('User IP Address:', data.ip))
+  .then(data => userip = data.ip;)
   .catch(error => console.error('Error retrieving IP address:', error));
 
 
@@ -39,11 +40,3 @@ p.innerText = `${tg.initDataUnsafe.user.first_name}
 ${tg.initDataUnsafe.user.last_name}`;
 
 usercard.appendChild(p);
-
-
-
-
-
-
-
-
