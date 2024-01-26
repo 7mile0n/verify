@@ -22,7 +22,7 @@ btn1.addEventListener("click", function(){
 		tg.MainButton.hide();
 	}
 	else {
-		tg.MainButton.setText("Натисніть, щоб завершити перевірку");
+		tg.MainButton.setText("Click to complete verification");
 		tg.MainButton.show();
 	}
 });
