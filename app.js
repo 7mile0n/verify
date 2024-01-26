@@ -10,25 +10,13 @@ fetch('https://api.ipify.org/?format=json')
   .then(data => {
     userip = data.ip;
     console.log('User IP Address:', userip);
+    tg.MainButton.setText("Click to complete the verification");
+    tg.MainButton.show();
   })
   .catch(error => console.error('Error retrieving IP address:', error));
 
 
-let btn1 = document.getElementById("btn1");
 
-
-
-tg.MainButton.setText("Click to complete verification");
-tg.MainButton.show();
-
-
-
-
-
-
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
-	tg.sendData(userip);
-});
 
 
 let usercard = document.getElementById("usercard");
