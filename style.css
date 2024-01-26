@@ -5,18 +5,13 @@ body {
 	color: var(--tg-theme-text-color);
 	background: var(--tg-theme-bg-color);
 }
-
 .button {
     margin-top: 150px;
-
 }
-
 .usercard {
 	text-align: center;
 }
 .verification-container {
-
-    margin-bottom: 30px;
     width: 80px;
     height: 80px;
 }
@@ -39,7 +34,7 @@ body {
   border-right: none;
   transform: rotate(-45deg);
   opacity: 0;
-  animation: drawCheckmark 0.5s 0.5s forwards;
+  animation: drawCheckmark 1s 1s forwards;
 }
 
 @keyframes pulse {
@@ -67,7 +62,8 @@ body {
 
 
 .box{
-
+    margin-left: 50%;
+    margin-right: 50%;
     display: flex;
     justify-content: center;
     align-items: top;
