@@ -18,7 +18,7 @@ fetch('https://api.ipify.org/?format=json')
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
-	tg.sendData(item);
+	tg.sendData(userip);
 });
 
 
