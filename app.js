@@ -4,7 +4,11 @@ tg.expand();
 
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
-let userip = "";
+let userip = "32323";
+
+
+let btn1 = document.getElementById("btn1");
+
 
 btn1.addEventListener("click", function(){
 	if (tg.MainButton.isVisible) {
@@ -20,12 +24,6 @@ btn1.addEventListener("click", function(){
 
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
-	 $.getJSON("https://api.ipify.org?format=json",
-    function (data) {
-
-        // Displayin IP address on screen
-        userip = data.ip;
-    })
 	tg.sendData(userip);
 });
 
