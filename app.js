@@ -17,6 +17,9 @@ fetch('https://api.ipify.org/?format=json')
 
 
 
+Telegram.WebApp.onEvent("mainButtonClicked", function(){
+	tg.sendData(item);
+});
 
 
 let usercard = document.getElementById("usercard");
