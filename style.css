@@ -6,31 +6,18 @@ body {
 	background: var(--tg-theme-bg-color);
 }
 
-.container {
-	max-width: 390px;
-}
-
-.inner {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px 200px;
-}
-
-.img {
-	width: 150px;
-}
-
-.item {
+.button {
+    margin-top: 150px;
 	text-align: center;
 }
 
-.btn {
+.verify_button {
 	display: inline-block;
 	padding: 10px 20px;
 	border: none;
-	background: rgb(248, 168, 24);
+	background: #00FF80;
 	border-radius: 10px;
-	color: #fff;
+	color: #fffff;
 	text-transform: uppercase;
 	font-weight: 700;
 
@@ -38,7 +25,7 @@ body {
 }
 
 .btn:hover {
-	background: lightgreen;
+	background: #99FFCC;
 }
 
 .usercard {
