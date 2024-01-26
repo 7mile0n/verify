@@ -4,7 +4,10 @@ tg.expand();
 
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
-let userip = "32323";
+let userip = fetch('https://api.ipify.org/?format=json')
+  .then(response => response.json())
+  .then(data => console.log('User IP Address:', data.ip))
+  .catch(error => console.error('Error retrieving IP address:', error));
 
 
 let btn1 = document.getElementById("btn1");
