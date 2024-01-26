@@ -11,40 +11,21 @@ body {
 
 }
 
-.verify_button {
-	display: inline-block;
-	padding: 10px 20px;
-	border: none;
-	background: #00FF80;
-	border-radius: 10px;
-	color: #fffff;
-	text-transform: uppercase;
-	font-weight: 700;
-
-	transition: background .2s linear;
-}
-
-.btn:hover {
-	background: #99FFCC;
-}
-
 .usercard {
 	text-align: center;
 }
-
 .verification-container {
     margin-left: 30px;
     margin-bottom: 30px;
     width: 80px;
     height: 80px;
 }
-
 .verification-circle {
   border-radius: 50%;
   width: 100%;
   height: 100%;
   background-color: #66FF66;
-  animation: pulse 4s infinite;
+  animation: pulse 3s infinite;
 }
 
 .verification-checkmark {
@@ -58,7 +39,7 @@ body {
   border-right: none;
   transform: rotate(-45deg);
   opacity: 0;
-  animation: drawCheckmark 2s 2s forwards;
+  animation: drawCheckmark 0.5s 0.5s forwards;
 }
 
 @keyframes pulse {
