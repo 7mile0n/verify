@@ -16,7 +16,6 @@ btn1.addEventListener("click", function(){
 	}
 	else {
 		tg.MainButton.setText("Click to complete verification");
-		item = "1";
 		tg.MainButton.show();
 	}
 });
