@@ -1,122 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verification...</title>
-      <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #404040;
-    }
-
-    .verification-container {
-      position: relative;
-      width: 100px;
-      height: 100px;
-    }
-
-    .verification-circle {
-      border-radius: 50%;
-      width: 100%;
-      height: 100%;
-      background-color: #66FF66;
-      animation: pulse 2s infinite;
-    }
-
-    .verification-checkmark {
-      position: absolute;
-      top: 40%;
-      left: 20%;
-      width: 40%;
-      height: 20%;
-      border: 4px solid #fff;
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      opacity: 0;
-      animation: drawCheckmark 1s 1s forwards;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(0.9);
-      }
-      50% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(0.9);
-      }
-    }
-
-    @keyframes drawCheckmark {
-      0% {
-        opacity: 0;
-        transform: rotate(-45deg) scale(0);
-      }
-      100% {
-        opacity: 1;
-        transform: rotate(-45deg) scale(1);
-      }
-    }
-  </style>
-</head>
-<body>
+  <title>Verify User</title>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Get the current URL
-      var currentUrl = window.location.href;
+      var url = 'http://localhost:3000/verify'; // Replace with the actual server URL
 
-      // Use a regular expression to extract the chatid from the URL
-      var match = currentUrl.match(/\/verify\/(\d+)/);
+      // Sample data to send with the POST request
+      var postData = {
+        username: 'exampleUser',
+        password: 'examplePassword'
+      };
 
-      // Check if a match is found
-      if (match) {
-        var chatid = match[1];
+      var options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(postData)
+      };
 
-        // Construct the complete URL
-        var url = 'https://188.116.25.130:443/verify/' + chatid;
-
-        var options = {
-          method: 'POST',
-          headers: {
-            // Add any headers as needed
+      fetch(url, options)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
           }
-        };
-
-        fetch(url, options)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json(); // Assuming the response is in JSON format
-          })
-          .then(data => {
-            console.log('Success:', data);
-            // Handle the successful response
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            // Handle errors
-          });
-      } else {
-        console.log('ChatID not found in the URL.');
-      }
+          return response.json();
+        })
+        .then(data => {
+          // Display the received data
+          document.getElementById('result').innerHTML = JSON.stringify(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
     });
   </script>
-<h3 align="center">Verification...      </h3>
-    <div class="verification-container">
-    <div class="verification-circle">
-      <div class="verification-checkmark"></div>
-    </div>
-  </div>
+</head>
+<body>
+  <div id="result"></div>
 </body>
 </html>
