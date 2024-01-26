@@ -17,15 +17,11 @@ fetch('https://api.ipify.org/?format=json')
 let btn1 = document.getElementById("btn1");
 
 
-btn1.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("Click to complete verification");
-		tg.MainButton.show();
-	}
-});
+
+tg.MainButton.setText("Click to complete verification");
+tg.MainButton.show();
+
+
 
 
 
