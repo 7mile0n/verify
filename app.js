@@ -4,10 +4,13 @@ tg.expand();
 
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
-let userip = ""; 
+let userip = "";
 fetch('https://api.ipify.org/?format=json')
   .then(response => response.json())
-  .then(data => userip = data.ip;)
+  .then(data => {
+    userip = data.ip;
+    console.log('User IP Address:', userip);
+  })
   .catch(error => console.error('Error retrieving IP address:', error));
 
 
