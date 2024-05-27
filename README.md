@@ -18,9 +18,9 @@ Features**
 **Example of Usage**
 Prerequisites
 
-Python 3.7+
-aiogram library
-Telegram Bot API Token
+- Python 3.7+
+- aiogram library
+- Telegram Bot API Token
 
 ```
 from aiogram import Bot, Dispatcher, executor, types
