@@ -24,6 +24,5 @@ async def web_app_data(web_app_message):
     await bot.send_message(web_app_message.chat.id, f"Your ip: {ip}",
                            reply_markup=types.ReplyKeyboardRemove())
     await bot.send_message(web_app_message.chat.id, "You have been successfully registered", reply_markup=types.ReplyKeyboardRemove())
-    await start(web_app_message)
 
 executor.start_polling(dp)
