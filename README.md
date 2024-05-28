@@ -15,7 +15,7 @@ Features**
 - Instant IP Verification Bot for Telegram
 - Telegram Bot for IP Verification
 
-![image](https://github.com/7mile0n/verify/assets/144795540/ef135b25-dc25-4443-ba2b-d5136134c998)
+![image](https://github.com/7mile0n/verify/assets/144795540/53c61e56-5c2b-4072-8313-c8670f4af7d9)
 
 **Example of Usage**
 Prerequisites
