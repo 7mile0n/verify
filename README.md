@@ -1,5 +1,4 @@
 **Overview**
-![image](https://github.com/7mile0n/verify/assets/144795540/ef135b25-dc25-4443-ba2b-d5136134c998)
 
 **VerifyBot is a Telegram bot that facilitates user verification by retrieving their IP addresses through the Telegram web application. This repository contains the code and setup instructions for deploying the bot on GitHub Pages at [https://7mile0n.github.io/verify/].
 Features**
@@ -15,6 +14,8 @@ Features**
 - Telegram Web App IP Retriever
 - Instant IP Verification Bot for Telegram
 - Telegram Bot for IP Verification
+
+![image](https://github.com/7mile0n/verify/assets/144795540/ef135b25-dc25-4443-ba2b-d5136134c998)
 
 **Example of Usage**
 Prerequisites
